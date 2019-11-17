@@ -12,7 +12,7 @@ package csense.kotlin.annotations.numbers
 
 @Retention(AnnotationRetention.SOURCE)
 @MustBeDocumented
-annotation class IntRange(
-    val from: Int = Int.MIN_VALUE,
-    val to: Int = Int.MAX_VALUE
+annotation class ByteLimit(
+    val from: Byte = Byte.MIN_VALUE,
+    val to: Byte = Byte.MAX_VALUE
 )

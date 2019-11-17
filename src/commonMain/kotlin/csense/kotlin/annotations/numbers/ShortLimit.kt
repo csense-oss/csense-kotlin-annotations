@@ -9,9 +9,10 @@ package csense.kotlin.annotations.numbers
     AnnotationTarget.LOCAL_VARIABLE,
     AnnotationTarget.ANNOTATION_CLASS
 )
+
 @Retention(AnnotationRetention.SOURCE)
 @MustBeDocumented
-annotation class DoubleRange(
-    val from: Double,
-    val to: Double
+annotation class ShortLimit(
+    val from: Short = Short.MIN_VALUE,
+    val to: Short = Short.MAX_VALUE
 )

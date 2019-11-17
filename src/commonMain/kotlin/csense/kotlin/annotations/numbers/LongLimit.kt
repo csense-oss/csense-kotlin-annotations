@@ -12,7 +12,7 @@ package csense.kotlin.annotations.numbers
 
 @Retention(AnnotationRetention.SOURCE)
 @MustBeDocumented
-annotation class ShortRange(
-    val from: Short = Short.MIN_VALUE,
-    val to: Short = Short.MAX_VALUE
+annotation class LongLimit(
+    val from: Long = Long.MIN_VALUE,
+    val to: Long = Long.MAX_VALUE
 )
