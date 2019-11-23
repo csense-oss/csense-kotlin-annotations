@@ -10,7 +10,7 @@ package csense.kotlin.annotations.numbers
     AnnotationTarget.ANNOTATION_CLASS
 )
 
-@Retention(AnnotationRetention.SOURCE)
+@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
 annotation class ByteLimit(
     val from: Byte = Byte.MIN_VALUE,

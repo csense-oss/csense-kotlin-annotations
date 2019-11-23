@@ -9,7 +9,7 @@ package csense.kotlin.annotations.numbers
     AnnotationTarget.LOCAL_VARIABLE,
     AnnotationTarget.ANNOTATION_CLASS
 )
-@Retention(AnnotationRetention.SOURCE)
+@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
 annotation class DoubleLimit(
     val from: Double,
