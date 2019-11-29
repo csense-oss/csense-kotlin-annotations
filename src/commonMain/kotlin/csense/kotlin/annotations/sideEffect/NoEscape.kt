@@ -5,7 +5,9 @@ package csense.kotlin.annotations.sideEffect
 @Target(
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.TYPE_PARAMETER,
-    AnnotationTarget.FUNCTION
+    AnnotationTarget.FUNCTION,
+    AnnotationTarget.FIELD,
+    AnnotationTarget.PROPERTY
 
 )
 @Retention(AnnotationRetention.SOURCE)

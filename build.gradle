@@ -15,7 +15,6 @@ buildscript {
     ext.csenseGit = "https://github.com/csense-oss/csense-kotlin-annotations.git"
     ext.csenseArtifactDescription = ""
     ext.csenseVersionDescription = "initial version"
-
 }
 
 plugins {

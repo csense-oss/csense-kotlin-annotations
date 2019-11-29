@@ -1,3 +1,7 @@
+
+# 0.0.10
+- updated scope for "NoEscape"
+
 # 0.0.9
 - added "NoEscape"
 
