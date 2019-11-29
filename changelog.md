@@ -1,3 +1,6 @@
+# 0.0.9
+- added "NoEscape"
+
 # 0.0.8
 - added "InAny"
     (reason: you might want to bail out of the InUiContext / InBackgroundContext for certain methods, where the threading does not matter; this is the annotation for that)
