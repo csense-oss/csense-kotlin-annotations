@@ -1,3 +1,5 @@
+# 0.0.11
+- updated targets for threading annotations and NoEscape. 
 
 # 0.0.10
 - updated scope for "NoEscape"
