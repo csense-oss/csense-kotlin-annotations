@@ -5,6 +5,7 @@ package csense.kotlin.annotations.sideEffect
 @Target(
     AnnotationTarget.VALUE_PARAMETER,//TODO hmm not sure ?
     AnnotationTarget.TYPE_PARAMETER,
+    AnnotationTarget.TYPE,
     AnnotationTarget.FUNCTION,
     AnnotationTarget.FIELD,
     AnnotationTarget.PROPERTY
