@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package csense.kotlin.annotations.numbers
 
 @Target(

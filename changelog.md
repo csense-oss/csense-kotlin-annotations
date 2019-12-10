@@ -1,3 +1,9 @@
+# 0.0.14
+
+# 0.0.13
+- suppress unused 
+- double & float limit have more variants (to avoid non constant upper limit / lower limits)
+
 # 0.0.12
 - updated targets further
 
