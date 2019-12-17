@@ -5,6 +5,7 @@ package csense.kotlin.annotations.numbers
 //region float limit
 @Target(
     AnnotationTarget.FUNCTION,
+    AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_GETTER,
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.VALUE_PARAMETER,
@@ -24,6 +25,7 @@ annotation class FloatLimit(
 //region float limit to max
 @Target(
     AnnotationTarget.FUNCTION,
+    AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_GETTER,
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.VALUE_PARAMETER,
@@ -42,6 +44,7 @@ annotation class FloatLimitToMax(
 //region float limit from min
 @Target(
     AnnotationTarget.FUNCTION,
+    AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_GETTER,
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.VALUE_PARAMETER,

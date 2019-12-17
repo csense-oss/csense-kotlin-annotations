@@ -5,6 +5,7 @@ package csense.kotlin.annotations.numbers
 //region Double limit
 @Target(
     AnnotationTarget.FUNCTION,
+    AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_GETTER,
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.VALUE_PARAMETER,
@@ -23,6 +24,7 @@ annotation class DoubleLimit(
 //region Double limit to max
 @Target(
     AnnotationTarget.FUNCTION,
+    AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_GETTER,
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.VALUE_PARAMETER,
@@ -41,6 +43,7 @@ annotation class DoubleLimitToMax(
 //region Double limit from min
 @Target(
     AnnotationTarget.FUNCTION,
+    AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_GETTER,
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.VALUE_PARAMETER,

@@ -5,6 +5,7 @@ package csense.kotlin.annotations.numbers
 @Target(
     AnnotationTarget.FUNCTION,
     AnnotationTarget.PROPERTY_GETTER,
+    AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
