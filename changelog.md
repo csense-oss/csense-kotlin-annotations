@@ -1,3 +1,7 @@
+# 0.0.15
+- parameterLessConstructorRequired
+- minor doc updated for superCallRequired
+
 # 0.0.14
 - limits on fields. 
 
