@@ -1,3 +1,8 @@
+# 0.0.16
+- propertyMustBeConstant added
+- CalledFromConstructor added
+
+
 # 0.0.15
 - parameterLessConstructorRequired
 - minor doc updated for superCallRequired
