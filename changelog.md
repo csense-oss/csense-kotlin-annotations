@@ -1,3 +1,7 @@
+# 0.0.17
+- CalledFromConstructor was not preserved in binary
+- collectionSize & variants added.
+
 # 0.0.16
 - propertyMustBeConstant added
 - CalledFromConstructor added
