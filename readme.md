@@ -63,4 +63,5 @@ class MyService{
 fun Int.computeSomethingThatTakesAlongTime(){
 }
 ```
-
+Which looks as this
+![Image example of the above snippet](./images/android-threading-example.jpg)
