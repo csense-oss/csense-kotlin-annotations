@@ -11,7 +11,9 @@ https://github.com/csense-oss/csense-kotlin-annotations-idea
 gives IDE warnings, errors and uses the annotations to provide a RICH and helpful errors and warnings and suggestions.
 
 ## Simple examples
-### General
+
+
+### General number ranges / limits
 
 Say you want to say a number is in a certain range, you can do that via various annotations libraries but apart from Jetbrains's which only provide some number ranges, this provides all types of number ranges and the plugin is able to show that as well.
 for example:
@@ -25,7 +27,7 @@ Then calling that with say "-1" would look like such
 
 
 
-### Android
+### Android and threading
 Android have a quite a lot of tools, libraries ect, 
 but as of writing , even in android studio 3.6.1, a simple enter click on a line after the inbuilt Statical analysis have concluded you are trying to call background code from say the UI , it just stops working; 
 
