@@ -1,12 +1,9 @@
 package com.csense.annotations.example
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.annotation.WorkerThread
 import androidx.appcompat.app.AppCompatActivity
 import csense.kotlin.annotations.threading.InBackground
-import csense.kotlin.annotations.threading.InUi
 import csense.kotlin.annotations.threading.InUiContext
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
