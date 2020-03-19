@@ -27,17 +27,17 @@ Then calling that with say "-1" would look like such
 
 
 
-### Android and threading
+### (Android) threading
 Android have a quite a lot of tools, libraries ect, 
 but as of writing , even in android studio 3.6.1, a simple enter click on a line after the inbuilt Statical analysis have concluded you are trying to call background code from say the UI , it just stops working; 
 
-Not only that but there are quite a number of inconveniences, which makes it so cumbersome to use, say annotating every method in an activity / fragment with "UIThread", that people simply doesnt do it.
+Not only that, but there are quite a number of inconveniences, which makes it so cumbersome to use, say annotating every method in an activity / fragment with "UIThread", that people simply doesnt do it.
 This is quite sad as it could easily prevent a lot of bugs with thread interleaving.
 Luckily we have a solution to that, meet the InUIContext and InBackgroundContext annotations. These work on Class level,and can even be applied externally (say on androids activity class) , meaning that ALL you own classes will then inherit that, thus avoid any annotations to be written before most of the help comes your way.
 By then annotating say controllers & services with the InBackgroundContext you essentially have most if not all of the threading in place.
 (see the example/android  for an example project).
 
-Here is a short example with a few descriptions:
+Here is a short example with a few descriptions (this could also be used in other UI frameworks as well):
 ```kotlin
 @InUiContext
 class TestActivity : Activity() {
@@ -67,3 +67,49 @@ fun Int.computeSomethingThatTakesAlongTime(){
 ```
 Which looks as this
 ![Image example of the above snippet](./images/android-threading-example.jpg)
+
+
+### Parameter-less constructor required
+Since a lot of reflection based libraries relies on classes with empty constructors you can instead annotate any base class with
+```kotlin
+@ParameterLessConstructorRequired
+```
+Then the plugin will verify that your class indeed have a parameter-less constructor.
+
+
+### Super call required
+Since some libaries or frameworks requires the "super" implementation to be called, there is of cause a 
+```kotlin
+@SuperCallRequired
+``` 
+(but the one(s) from android will also be parsed / understood)
+And then the plugin provides an inspection on that as well.
+
+
+### Property must be constant
+Since kotlin give you a lot of power, but also a lot of flexibility, you can end up with some un "intended" consequences.
+For example if you want to design something with a "property" that is "constant", say not computed ,then you are out of luck.
+However, there is an annotation for that, called
+```kotlin
+@PropertyMustBeConstant
+```
+And of course the plugin will try to detect if you do any kind of non constant work. 
+
+
+### No escape
+(for another reference see https://youtrack.jetbrains.com/issue/KT-29938)
+
+The idea is pretty simple: 
+say you are designing an API where you want to give the user / consumer said object, but you do NOT want them to keep it, store it or even capture it.
+The only use is to invoke some operation on or pass on to another function that will not store it in any way. 
+Think of it as a "lifetime guarantee" where you essentially limit the object to your liking.
+This is what 
+```kotlin
+@NoEscape
+```
+is.
+An example of usage could be, the android API where once in a while you are parsed a context, but you are "not" supposed to store it.
+That would be a good candidate for @NoEscape(where it could prevent memory leaks).
+It could also serve in cryptograpy code, where storing sensitive information would be "prohibited"(avoiding storing things in memory that are not intended for so).
+
+(this is still WIP but there are some support for this already)
