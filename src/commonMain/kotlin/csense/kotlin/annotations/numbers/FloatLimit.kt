@@ -50,7 +50,8 @@ annotation class FloatLimitToMax(
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries

@@ -11,7 +11,8 @@ package csense.kotlin.annotations.numbers
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
@@ -30,7 +31,8 @@ annotation class DoubleLimit(
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
@@ -49,7 +51,8 @@ annotation class DoubleLimitToMax(
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries

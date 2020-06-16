@@ -15,7 +15,8 @@ package csense.kotlin.annotations.collections
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
@@ -33,7 +34,8 @@ annotation class CollectionSize(val exactSize: Int)
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
@@ -51,7 +53,8 @@ annotation class CollectionSizeAtMax(val maxNumberOfItems: Int)
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
@@ -70,7 +73,8 @@ annotation class CollectionSizeAtLeast(val minNumberOfItems: Int)
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
