@@ -1,3 +1,6 @@
+# 0.0.18
+- added AnnotationTargets.Type as a workaround for the inability to annotate functional parameters.
+
 # 0.0.17
 - CalledFromConstructor was not preserved in binary
 - collectionSize & variants added.
