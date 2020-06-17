@@ -1,12 +1,16 @@
 @file:Suppress("unused")
 
-package csense.kotlin.annotations.threading
+package csense.kotlin.annotations.unitsystem
 
 /**
- * The concept with this is to allow certain constructs to exists that can work in any context (ui or background alike)
- * this could be constructs that changes the threading model to say UI.
+ * idea:
+ * user declares ValueTypes (as a object) with const vals which are strings (or it might be a enum or alike, or sealed class with string value)
+ * @ValueType(ValueTypes.PX)
+ * or "UnitType"
+ * or UnitSystem
  *
  */
+
 @Target(
     AnnotationTarget.FUNCTION,
     AnnotationTarget.PROPERTY,
@@ -16,4 +20,6 @@ package csense.kotlin.annotations.threading
 )
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
-public annotation class InAny
+public annotation class UnitSystem(
+    val unit: String
+)

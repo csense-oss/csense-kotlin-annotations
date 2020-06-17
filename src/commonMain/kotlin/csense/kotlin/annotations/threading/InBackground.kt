@@ -17,4 +17,4 @@ package csense.kotlin.annotations.threading
 )
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
-annotation class InBackground
+public annotation class InBackground

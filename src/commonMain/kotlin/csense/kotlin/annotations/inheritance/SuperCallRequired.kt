@@ -10,4 +10,4 @@ package csense.kotlin.annotations.inheritance
 )
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
-annotation class SuperCallRequired
+public annotation class SuperCallRequired

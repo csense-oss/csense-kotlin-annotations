@@ -11,5 +11,5 @@ package csense.kotlin.annotations.inheritance
 )
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
-annotation class ParameterLessConstructorRequired {
+public annotation class ParameterLessConstructorRequired {
 }

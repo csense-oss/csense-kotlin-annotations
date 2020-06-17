@@ -16,7 +16,7 @@ package csense.kotlin.annotations.numbers
 
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
-annotation class IntLimit(
+public annotation class IntLimit(
     val from: Int = Int.MIN_VALUE,
     val to: Int = Int.MAX_VALUE
 )

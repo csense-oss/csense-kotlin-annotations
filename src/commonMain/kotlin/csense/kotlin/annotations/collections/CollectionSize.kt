@@ -20,7 +20,7 @@ package csense.kotlin.annotations.collections
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
-annotation class CollectionSize(val exactSize: Int)
+public annotation class CollectionSize(val exactSize: Int)
 
 /**
  * Denotes that the given collection (say, list , array or alike) have at max the specified number of elements
@@ -39,7 +39,7 @@ annotation class CollectionSize(val exactSize: Int)
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
-annotation class CollectionSizeAtMax(val maxNumberOfItems: Int)
+public annotation class CollectionSizeAtMax(val maxNumberOfItems: Int)
 
 /**
  * Denotes that the given collection (say, list , array or alike) have at least the specified number of elements
@@ -58,7 +58,7 @@ annotation class CollectionSizeAtMax(val maxNumberOfItems: Int)
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
-annotation class CollectionSizeAtLeast(val minNumberOfItems: Int)
+public annotation class CollectionSizeAtLeast(val minNumberOfItems: Int)
 
 /**
  * Denotes that the given collection (say, list , array or alike) have at the given range of elements
@@ -78,5 +78,5 @@ annotation class CollectionSizeAtLeast(val minNumberOfItems: Int)
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
-annotation class CollectionSizeRange(val fromNumberOfItems: Int, val toNumberOfItems: Int)
+public annotation class CollectionSizeRange(val fromNumberOfItems: Int, val toNumberOfItems: Int)
 

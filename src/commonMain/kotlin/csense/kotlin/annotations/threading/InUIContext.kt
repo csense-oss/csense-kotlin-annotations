@@ -9,4 +9,4 @@ package csense.kotlin.annotations.threading
     AnnotationTarget.TYPE
 )
 @MustBeDocumented
-annotation class InUiContext
+public annotation class InUiContext

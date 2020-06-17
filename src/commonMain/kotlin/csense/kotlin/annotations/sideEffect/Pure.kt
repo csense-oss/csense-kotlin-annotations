@@ -13,4 +13,4 @@ package csense.kotlin.annotations.sideEffect
  * it HAS to be used, as not using it would equal not calling the function.
  * Nb, a throwing method is "technically" not pure.
  */
-annotation class Pure
+public annotation class Pure

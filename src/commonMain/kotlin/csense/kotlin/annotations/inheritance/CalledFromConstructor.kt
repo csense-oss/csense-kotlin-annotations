@@ -10,4 +10,4 @@ package csense.kotlin.annotations.inheritance
 @Target(AnnotationTarget.FUNCTION)
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
-annotation class CalledFromConstructor
+public annotation class CalledFromConstructor

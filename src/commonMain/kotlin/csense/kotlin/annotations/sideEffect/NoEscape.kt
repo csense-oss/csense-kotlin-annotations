@@ -25,4 +25,4 @@ package csense.kotlin.annotations.sideEffect
  *
  * see https://youtrack.jetbrains.com/issue/KT-29938 for the concept as well.
  */
-annotation class NoEscape
+public annotation class NoEscape

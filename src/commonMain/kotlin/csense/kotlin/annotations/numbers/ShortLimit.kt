@@ -16,7 +16,7 @@ package csense.kotlin.annotations.numbers
 
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
-annotation class ShortLimit(
+public annotation class ShortLimit(
     val from: Short = Short.MIN_VALUE,
     val to: Short = Short.MAX_VALUE
 )
