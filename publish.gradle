@@ -1,0 +1,67 @@
+//TODO see https://stackoverflow.com/a/63502756/1128615
+
+apply plugin: "maven-publish"
+
+
+project.group = csenseGroupId
+project.version = csenseVersionName
+
+
+afterEvaluate {
+    project.publishing.publications.all {
+        groupId = group
+        if (it.name.contains('kotlinMultiplatform')) {
+            artifactId = "$csenseArtifactId"
+        } else {
+            artifactId = "$csenseArtifactId-$name"
+        }
+    }
+}
+
+publishing {
+    publications {
+        it.withType(MavenPublication) {
+            groupId = csenseGroupId
+            artifactId = csenseArtifactId
+            version = csenseVersionName
+
+            pom {
+                name = csenseArtifactId
+                description = csenseArtifactDescription
+                url = csenseWebsite
+
+                licenses {
+                    license {
+                        name = csenseLicense
+                        url = "https://mit-license.org/"
+                    }
+                }
+                developers {
+                    developer {
+                        id = "tvede-dk"
+                        name = "Kasper Tvede"
+                        email = "kasper@webmasteren.eu"
+                    }
+                }
+                organization {
+                    name = csenseUserOrg
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            url = "https://api.bintray.com/maven/${csenseUserOrg}/${csenseRepoName}/${csenseArtifactId}/;publish=0"
+            credentials {
+                Properties properties = new Properties()
+                try {
+                    properties.load(project.rootProject.file('local.properties')?.newDataInputStream())
+                    username = properties.getProperty('bintrayUser')
+                    password = properties.getProperty('bintrayApiKey')
+                } catch (Exception ignored) {
+                    print "could not read local.properties"
+                }
+            }
+        }
+    }
+}

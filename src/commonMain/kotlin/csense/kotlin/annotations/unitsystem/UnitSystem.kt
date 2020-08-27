@@ -21,5 +21,5 @@ package csense.kotlin.annotations.unitsystem
 @Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
 @MustBeDocumented
 public annotation class UnitSystem(
-    val unit: String
+    val unitName: String,
 )

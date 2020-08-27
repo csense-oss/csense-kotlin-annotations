@@ -5,5 +5,4 @@ pluginManagement {
         maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
     }
 }
-enableFeaturePreview('GRADLE_METADATA')
 rootProject.name = 'csense-kotlin-annotations'

@@ -17,11 +17,12 @@ buildscript {
 }
 
 plugins {
-    id 'org.jetbrains.kotlin.multiplatform' version "1.4-M2"
-    id 'org.jetbrains.dokka' version "0.10.1"
+    id 'org.jetbrains.kotlin.multiplatform' version "1.4.0"
+    id("org.jetbrains.dokka") version "0.10.1"
     id "maven-publish"
     id "com.jfrog.bintray" version "1.8.4"
 }
+
 
 repositories {
     jcenter()
@@ -44,26 +45,12 @@ kotlin {
     }
     sourceSets {
         commonMain {
-            dependencies {
-                implementation kotlin('stdlib-common')
-            }
-        }
-        commonTest {
-            dependencies {
-                implementation kotlin('test-common')
-                implementation kotlin('test-annotations-common')
-            }
         }
         jvmMain {
-            dependencies {
-                implementation kotlin('stdlib-jdk8')
-            }
+
         }
 
         jsMain {
-            dependencies {
-                implementation kotlin('stdlib-js')
-            }
         }
 
     }
@@ -73,6 +60,7 @@ kotlin.sourceSets.all {
     languageSettings.progressiveMode = true
 }
 
+apply from: "publish.gradle"
 dokka {
     multiplatform {
         global {
@@ -86,25 +74,15 @@ dokka {
     }
 }
 
-bintrayUpload.dependsOn("dokka")
 
-bintray {
-    Properties properties = new Properties()
-    try {
-        properties.load(project.rootProject.file('local.properties')?.newDataInputStream())
-        user = properties.getProperty('bintrayUser')
-        key = properties.getProperty('bintrayApiKey')
-    } catch (Exception ignored) {
-        print "could not read local.properties"
-    }
-    publications = publishing.publications.getNames()
-    override = true
-    publish = false
-    pkg {
-        repo = project.csenseRepoName
-        userOrg = project.csenseUserOrg
-        vcsUrl = project.csenseGit
-        licenses = project.csenseLicense
-        name = project.csenseArtifactId
-    }
+task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+    outputFormat = "javadoc"
+    outputDirectory = "$buildDir/dokkaJavadoc"
 }
+
+final def javaDocJarTask = task("javadocJar", type: Jar, dependsOn: "dokkaJavadoc") {
+    archiveClassifier.set('javadoc')
+    from "${project.buildDir}/dokkaJavadoc"
+}
+
+publish.dependsOn(javaDocJarTask)

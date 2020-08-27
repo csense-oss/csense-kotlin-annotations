@@ -1,9 +1,11 @@
 # 0.0.19
-- use kotlin 1.4m2 (useful for double& float Limit)
+- use kotlin 1.4 (useful for double& float Limit)
     - {Double, Float}Limit have only 1 annotation now (with defaults)
 
 - UnitSystem annotation added
 - kotlin explicit library mode enabled & enforced
+- Guided implementation annotation added
+
 # 0.0.18
 - added AnnotationTargets.Type as a workaround for the inability to annotate functional parameters.
 
