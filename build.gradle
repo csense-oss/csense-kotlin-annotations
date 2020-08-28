@@ -10,6 +10,12 @@ buildscript {
 
     ext.csenseGithub = "csense-oss/csense-kotlin-annotations"
     ext.csenseLicense = "MIT"
+    ext.csenseLicenseUrl = "https://mit-license.org/"
+
+    ext.csenseDeveloperAlias = "tvede-dk"
+    ext.csenseDeveloperName = "Kasper Tvede"
+    ext.csenseDeveloperEmail = "csenseoss@tvedesys.dk"
+
     ext.readme = "readme.md"
     ext.csenseWebsite = "https://github.com/csense-oss/csense-kotlin-annotations"
     ext.csenseGit = "https://github.com/csense-oss/csense-kotlin-annotations.git"
@@ -60,29 +66,43 @@ kotlin.sourceSets.all {
     languageSettings.progressiveMode = true
 }
 
-apply from: "publish.gradle"
-dokka {
-    multiplatform {
-        global {
-            perPackageOption {
-                prefix = "csense.kotlin.annotations"
-                suppress = true
-            }
-        }
-        js {}
-        jvm {}
-    }
+//required for the dokka.
+
+task docCommon(type: org.jetbrains.dokka.gradle.DokkaTask) {
+
+    outputFormat = 'javadoc'
+
+    outputDirectory = "$buildDir/doc_common"
+
+    impliedPlatforms = ["Common"] // This will force platform tags for all non-common sources e.g. "JVM"
 }
 
+task docJs(type: org.jetbrains.dokka.gradle.DokkaTask) {
 
-task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
-    outputFormat = "javadoc"
-    outputDirectory = "$buildDir/dokkaJavadoc"
+    outputFormat = 'javadoc'
+
+    outputDirectory = "$buildDir/doc_js"
+
+    impliedPlatforms = ["Common"] // This will force platform tags for all non-common sources e.g. "JVM"
 }
 
-final def javaDocJarTask = task("javadocJar", type: Jar, dependsOn: "dokkaJavadoc") {
-    archiveClassifier.set('javadoc')
-    from "${project.buildDir}/dokkaJavadoc"
+task docJvm(type: org.jetbrains.dokka.gradle.DokkaTask) {
+
+    outputFormat = 'javadoc'
+
+    outputDirectory = "$buildDir/doc_jvm"
+
+    impliedPlatforms = ["Common"] // This will force platform tags for all non-common sources e.g. "JVM"
 }
 
-publish.dependsOn(javaDocJarTask)
+task doc {
+    dependsOn docCommon
+    dependsOn docJvm
+    dependsOn docJs
+}
+
+project.group = csenseGroupId
+project.version = csenseVersionName
+
+apply from: "$rootDir/gradle/dokka.gradle"
+apply from: "$rootDir/gradle/publish.gradle"
