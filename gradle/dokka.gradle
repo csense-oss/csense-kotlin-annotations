@@ -30,12 +30,3 @@ task jvmJavadoc(type: Jar, dependsOn: "docJvm") {
     archiveClassifier.set('javadoc')
     from "${project.buildDir}/doc_jvm"
 }
-task jsJavadoc(type: Jar, dependsOn: "docJs") {
-    archiveClassifier.set('javadoc')
-    from "${project.buildDir}/doc_js"
-}
-task commonJavadoc(type: Jar, dependsOn: "docCommon") {
-    archiveClassifier.set('javadoc')
-    from "${project.buildDir}/doc_common"
-}
-

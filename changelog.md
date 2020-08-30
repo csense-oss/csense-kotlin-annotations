@@ -1,4 +1,4 @@
-# 0.0.19
+# 0.0.40
 - use kotlin 1.4 (useful for double& float Limit)
     - {Double, Float}Limit have only 1 annotation now (with defaults)
 

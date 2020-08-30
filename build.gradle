@@ -1,6 +1,6 @@
 buildscript {
     //versions & naming
-    ext.csenseVersionName = "0.0.19"
+    ext.csenseVersionName = "0.0.40"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -26,14 +26,11 @@ plugins {
     id 'org.jetbrains.kotlin.multiplatform' version "1.4.0"
     id("org.jetbrains.dokka") version "0.10.1"
     id "maven-publish"
-    id "com.jfrog.bintray" version "1.8.4"
 }
 
 
 repositories {
     jcenter()
-    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
-    maven { url 'https://kotlin.bintray.com/kotlinx' }
     maven { url "https://dl.bintray.com/csense-oss/maven" }
 }
 
@@ -43,11 +40,9 @@ version project.csenseVersionName
 kotlin {
     explicitApi = 'strict'
     jvm()
-    js {
-        browser {
-        }
-        nodejs {
-        }
+    js(BOTH) { //https://kotlinlang.org/docs/reference/whatsnew14.html#new-js-ir-backend
+        browser()
+        nodejs()
     }
     sourceSets {
         commonMain {
@@ -68,24 +63,6 @@ kotlin.sourceSets.all {
 
 //required for the dokka.
 
-task docCommon(type: org.jetbrains.dokka.gradle.DokkaTask) {
-
-    outputFormat = 'javadoc'
-
-    outputDirectory = "$buildDir/doc_common"
-
-    impliedPlatforms = ["Common"] // This will force platform tags for all non-common sources e.g. "JVM"
-}
-
-task docJs(type: org.jetbrains.dokka.gradle.DokkaTask) {
-
-    outputFormat = 'javadoc'
-
-    outputDirectory = "$buildDir/doc_js"
-
-    impliedPlatforms = ["Common"] // This will force platform tags for all non-common sources e.g. "JVM"
-}
-
 task docJvm(type: org.jetbrains.dokka.gradle.DokkaTask) {
 
     outputFormat = 'javadoc'
@@ -93,12 +70,6 @@ task docJvm(type: org.jetbrains.dokka.gradle.DokkaTask) {
     outputDirectory = "$buildDir/doc_jvm"
 
     impliedPlatforms = ["Common"] // This will force platform tags for all non-common sources e.g. "JVM"
-}
-
-task doc {
-    dependsOn docCommon
-    dependsOn docJvm
-    dependsOn docJs
 }
 
 project.group = csenseGroupId
