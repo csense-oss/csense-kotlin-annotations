@@ -1,12 +1,12 @@
 # What is this library
 
 Most of the time Statical compiled languages offers quite a lot of type checking and other features at compile time.
-However stuff as "this number is in this range" is usually not considered to be part of a compiler (excluding contracts
+However, stuff as "this number is in this range" is usually not considered to be part of a compiler (excluding contracts
 and what not)
-But its very handy to know whenever a color takes double between 0 and 1 (otherwise throws) or 0 to 255.
+But it's very handy to know whenever a color takes double between 0 and 1 (otherwise throws) or 0 to 255.
 
 This is the same with a lot of other types of "enrichment"  to classes / code, where building it into the compiler (
-kotlin) would properly not just happen straight out but the help it can offer could / is substantial.
+kotlin) would properly not just happen straight out, but the help it can offer could / is substantial.
 
 This library alone provide annotations that enriches code; but together with the IDEA plugin
 https://github.com/csense-oss/csense-kotlin-annotations-idea
@@ -38,7 +38,7 @@ dependencies {
 ### General number ranges / limits
 
 Say you want to say a number is in a certain range, you can do that via various annotations libraries but apart from
-Jetbrains's which only provide some number ranges, this provides all types of number ranges and the plugin is able to
+Jetbrains's which only provide some number ranges, this provides all types of number ranges, and the plugin is able to
 show that as well. for example:
 
 ```kotlin
@@ -57,12 +57,12 @@ click on a line after the inbuilt Statical analysis have concluded you are tryin
 UI , it just stops working;
 
 Not only that, but there are quite a number of inconveniences, which makes it so cumbersome to use, say annotating every
-method in an activity / fragment with "UIThread", that people simply doesnt do it. This is quite sad as it could easily
+method in an activity / fragment with "UIThread", that people simply doesn't do it. This is quite sad as it could easily
 prevent a lot of bugs with thread interleaving. Luckily we have a solution to that, meet the InUIContext and
-InBackgroundContext annotations. These work on Class level,and can even be applied externally (say on androids activity
+InBackgroundContext annotations. These work on Class level,and can even be applied externally (say on androids' activity
 class) , meaning that ALL you own classes will then inherit that, thus avoid any annotations to be written before most
 of the help comes your way. By then annotating say controllers & services with the InBackgroundContext you essentially
-have most if not all of the threading in place.
+have most if not all the threading in place.
 (see the example/android for an example project).
 
 Here is a short example with a few descriptions (this could also be used in other UI frameworks as well):
@@ -83,7 +83,7 @@ class TestActivity : Activity() {
     }
 }
 
-//this means that all functions defined in "MyServcice" shall be executed on a background thread
+//this means that all functions defined in "MyService" shall be executed on a background thread
 @InBackgroundContext
 class MyService {
     fun fetchFromNetwork(): Int {
@@ -112,7 +112,7 @@ Then the plugin will verify that your class indeed have a parameter-less constru
 
 ### Super call required
 
-Since some libaries or frameworks requires the "super" implementation to be called, there is of cause a
+Since some libraries or frameworks requires the "super" implementation to be called, there is of course a
 
 ```kotlin
 @SuperCallRequired
@@ -131,7 +131,7 @@ you are out of luck. However, there is an annotation for that, called
 @PropertyMustBeConstant
 ```
 
-And of course the plugin will try to detect if you do any kind of non constant work.
+And of course the plugin will try to detect if you do any kind of non-constant work.
 
 ### No escape
 
@@ -149,7 +149,7 @@ This is what
 
 is. An example of usage could be, the android API where once in a while you are parsed a context, but you are "not"
 supposed to store it. That would be a good candidate for @NoEscape(where it could prevent memory leaks). It could also
-serve in cryptograpy code, where storing sensitive information would be "prohibited"(avoiding storing things in memory
+serve in cryptography code, where storing sensitive information would be "prohibited"(avoiding storing things in memory
 that are not intended for so).
 
 (this is still WIP but there are some support for this already)
