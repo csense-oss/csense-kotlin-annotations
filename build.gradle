@@ -1,6 +1,6 @@
 buildscript {
     //versions & naming
-    ext.csenseVersionName = "0.0.41"
+    ext.csenseVersionName = "0.0.42"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -24,15 +24,14 @@ buildscript {
 
 plugins {
     id "net.linguica.maven-settings" version "0.5"
-    id 'org.jetbrains.kotlin.multiplatform' version "1.4.31"
+    id 'org.jetbrains.kotlin.multiplatform' version "1.4.32"
     id("org.jetbrains.dokka") version "1.4.20"
     id "maven-publish"
 }
 
 
 repositories {
-    jcenter()
-    maven { url "https://dl.bintray.com/csense-oss/maven" }
+    mavenCentral()
 }
 
 group project.csenseGroupId

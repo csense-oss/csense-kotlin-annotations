@@ -1,3 +1,8 @@
+# 0.0.42
+
+- kotlin 1.4.32
+- gradle 7.0
+
 # 0.0.41
 
 - added NumberLimit
