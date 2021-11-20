@@ -1,3 +1,7 @@
+# 0.0.50
+- kotlin 1.6
+- DiscardableResult added
+
 # 0.0.42
 
 - kotlin 1.4.32
