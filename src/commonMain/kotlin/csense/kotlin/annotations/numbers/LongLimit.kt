@@ -14,7 +14,7 @@ package csense.kotlin.annotations.numbers
     AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
 public annotation class LongLimit(
     val from: Long = Long.MIN_VALUE,

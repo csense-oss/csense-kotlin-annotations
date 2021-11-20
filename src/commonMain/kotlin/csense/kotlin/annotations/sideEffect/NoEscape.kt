@@ -2,16 +2,6 @@
 
 package csense.kotlin.annotations.sideEffect
 
-@Target(
-    AnnotationTarget.VALUE_PARAMETER,//TODO hmm not sure ?
-    AnnotationTarget.TYPE_PARAMETER,
-    AnnotationTarget.TYPE,
-    AnnotationTarget.FUNCTION,
-    AnnotationTarget.FIELD,
-    AnnotationTarget.PROPERTY
-)
-@Retention(AnnotationRetention.SOURCE)
-@MustBeDocumented
 /**
  * A concept about stopping users from "taking" a given value.
  * You want (by inversion of control) to give the caller something back, that they can ONLY use for that limited time.
@@ -25,4 +15,14 @@ package csense.kotlin.annotations.sideEffect
  *
  * see https://youtrack.jetbrains.com/issue/KT-29938 for the concept as well.
  */
+@Target(
+    AnnotationTarget.VALUE_PARAMETER,//TODO hmm not sure ?
+    AnnotationTarget.TYPE_PARAMETER,
+    AnnotationTarget.TYPE,
+    AnnotationTarget.FUNCTION,
+    AnnotationTarget.FIELD,
+    AnnotationTarget.PROPERTY
+)
+@Retention(AnnotationRetention.SOURCE)
+@MustBeDocumented
 public annotation class NoEscape

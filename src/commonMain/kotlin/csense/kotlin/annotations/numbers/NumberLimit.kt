@@ -14,7 +14,7 @@ package csense.kotlin.annotations.numbers
     AnnotationTarget.ANNOTATION_CLASS,
     AnnotationTarget.TYPE//until you can annotate functional parameters
 )
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
 public annotation class NumberLimit(
     val from: Double = Double.MIN_VALUE,

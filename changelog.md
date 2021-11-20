@@ -1,3 +1,10 @@
+# 0.0.50
+- kotlin 1.6.0
+- DiscardableResult added
+- InSelector added 
+- InAnyContext added for consistency
+- improved doc
+
 # 0.0.42
 
 - kotlin 1.4.32

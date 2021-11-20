@@ -1,8 +1,10 @@
 @file:Suppress("unused")
 
 package csense.kotlin.annotations.threading
+
 /**
- * Denotes that the given context (whole class, file etc.) MUST be executed in the UI thread
+ * Denotes that the given context (the whole class/file etc.)
+ * can execute in whatever threading state (say UI, background, IO etc)
  */
 @Retention(AnnotationRetention.BINARY)
 @Target(
@@ -11,4 +13,4 @@ package csense.kotlin.annotations.threading
     AnnotationTarget.TYPE
 )
 @MustBeDocumented
-public annotation class InUiContext
+public annotation class InAnyContext

@@ -2,6 +2,10 @@
 
 package csense.kotlin.annotations.threading
 
+
+/**
+ * Denotes that the given MUST be executed in the UI thread
+ */
 @Target(
     AnnotationTarget.FUNCTION,
     AnnotationTarget.PROPERTY,
@@ -9,6 +13,6 @@ package csense.kotlin.annotations.threading
     AnnotationTarget.PROPERTY_GETTER,
     AnnotationTarget.VALUE_PARAMETER
 )
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
 public annotation class InUi

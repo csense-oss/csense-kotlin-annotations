@@ -17,5 +17,5 @@ package csense.kotlin.annotations.properties
  */
 @Target(AnnotationTarget.PROPERTY)
 @MustBeDocumented
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 public annotation class PropertyMustBeConstant
