@@ -13,7 +13,7 @@ package csense.kotlin.annotations.numbers
     AnnotationTarget.ANNOTATION_CLASS
 )
 
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
 public annotation class FloatLimit(
     val from: Float = Float.MIN_VALUE,

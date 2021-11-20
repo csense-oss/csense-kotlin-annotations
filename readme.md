@@ -29,7 +29,7 @@ Then add the dependency
 
 ```groovy
 dependencies {
-    implementation 'csense.kotlin:csense-kotlin-annotations:0.0.41'
+    implementation 'csense.kotlin:csense-kotlin-annotations:0.0.50'
 }
 ```
 
@@ -147,9 +147,16 @@ This is what
 @NoEscape
 ```
 
-is. An example of usage could be, the android API where once in a while you are parsed a context, but you are "not"
+An example of usage could be, the android API where once in a while you are parsed a context, but you are "not"
 supposed to store it. That would be a good candidate for @NoEscape(where it could prevent memory leaks). It could also
 serve in cryptography code, where storing sensitive information would be "prohibited"(avoiding storing things in memory
 that are not intended for so).
 
 (this is still WIP but there are some support for this already)
+
+### DiscardableResult
+
+```kotlin
+@DiscardableResult
+```
+Denotes a function return value is not "important" thus not using / storing it is "okay"

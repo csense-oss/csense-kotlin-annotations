@@ -8,6 +8,6 @@ package csense.kotlin.annotations.inheritance
 @Target(
     AnnotationTarget.FUNCTION
 )
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
 public annotation class SuperCallRequired

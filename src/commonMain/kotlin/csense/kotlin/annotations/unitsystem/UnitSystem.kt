@@ -18,7 +18,7 @@ package csense.kotlin.annotations.unitsystem
 //    AnnotationTarget.PROPERTY_GETTER,
 //    AnnotationTarget.VALUE_PARAMETER
 //)
-//@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+//@Retention(AnnotationRetention.BINARY) 
 //@MustBeDocumented
 //public annotation class UnitSystem(
 //    val unitName: String,

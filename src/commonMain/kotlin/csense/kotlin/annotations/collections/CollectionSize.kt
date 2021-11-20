@@ -19,7 +19,7 @@ package csense.kotlin.annotations.collections
     AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @MustBeDocumented
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 public annotation class CollectionSize(val exactSize: Int)
 
 /**
@@ -38,7 +38,7 @@ public annotation class CollectionSize(val exactSize: Int)
     AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @MustBeDocumented
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 public annotation class CollectionSizeAtMax(val maxNumberOfItems: Int)
 
 /**
@@ -57,7 +57,7 @@ public annotation class CollectionSizeAtMax(val maxNumberOfItems: Int)
     AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @MustBeDocumented
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 public annotation class CollectionSizeAtLeast(val minNumberOfItems: Int)
 
 /**
@@ -77,6 +77,6 @@ public annotation class CollectionSizeAtLeast(val minNumberOfItems: Int)
     AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @MustBeDocumented
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 public annotation class CollectionSizeRange(val fromNumberOfItems: Int, val toNumberOfItems: Int)
 

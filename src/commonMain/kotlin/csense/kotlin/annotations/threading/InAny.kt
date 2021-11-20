@@ -3,9 +3,7 @@
 package csense.kotlin.annotations.threading
 
 /**
- * The concept with this is to allow certain constructs to exists that can work in any context (ui or background alike)
- * this could be constructs that changes the threading model to say UI.
- *
+ * Denotes that the given can execute in whatever threading state (say UI, background, IO etc)
  */
 @Target(
     AnnotationTarget.FUNCTION,
@@ -14,6 +12,6 @@ package csense.kotlin.annotations.threading
     AnnotationTarget.PROPERTY_GETTER,
     AnnotationTarget.VALUE_PARAMETER
 )
-@Retention(AnnotationRetention.BINARY) //binary so its persisted across libraries
+@Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
 public annotation class InAny
