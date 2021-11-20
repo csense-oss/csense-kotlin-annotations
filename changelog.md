@@ -3,6 +3,7 @@
 - DiscardableResult added
 - InSelector added 
 - InAnyContext added for consistency
+- improved doc
 
 # 0.0.42
 
