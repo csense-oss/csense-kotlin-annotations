@@ -1,3 +1,10 @@
+# 0.0.51
+- added
+  - ShouldNotBeEmpty (to consideration)
+- updated 
+  - InAny, InBackground, InUi to work on functional types
+  - NoEscape to work on local variable
+  
 # 0.0.50
 - kotlin 1.6.0
 - DiscardableResult added

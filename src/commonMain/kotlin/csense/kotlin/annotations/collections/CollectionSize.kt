@@ -80,3 +80,9 @@ public annotation class CollectionSizeAtLeast(val minNumberOfItems: Int)
 @Retention(AnnotationRetention.BINARY) 
 public annotation class CollectionSizeRange(val fromNumberOfItems: Int, val toNumberOfItems: Int)
 
+
+
+//Hmm to consider
+@MustBeDocumented
+@Retention
+public annotation class ShouldNotBeEmpty

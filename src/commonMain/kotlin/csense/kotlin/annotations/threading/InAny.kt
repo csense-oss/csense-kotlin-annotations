@@ -10,7 +10,8 @@ package csense.kotlin.annotations.threading
     AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.PROPERTY_GETTER,
-    AnnotationTarget.VALUE_PARAMETER
+    AnnotationTarget.VALUE_PARAMETER,
+    AnnotationTarget.TYPE //for functional types
 )
 @Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
