@@ -27,6 +27,14 @@ class Service {
     fun forUiGiggles() {
         //this is ok to call from the ui.
     }
+
+    fun openPort(@IntLimit(from = 0, to = 65000) x: Int) {
+
+    }
+
+    fun usePort() {
+        openPort(-2)
+    }
 }
 
 enum class ServiceResult {
