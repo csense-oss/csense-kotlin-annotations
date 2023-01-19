@@ -1,11 +1,8 @@
-@file:Suppress("unused")
-
 package csense.kotlin.annotations.collections
 
 /**
- * Denotes that the given collection (say, list , array or alike) have the exact size specified.
- * @property exactSize Int the size this collection will "contain" / return
- * @constructor
+ * Denotes that the given collection (say, list , array or alike) have at max the specified number of elements
+ * @property maxNumberOfItems Int the size this collection will at max "contain" / return
  */
 @Target(
     AnnotationTarget.FUNCTION,
@@ -19,6 +16,5 @@ package csense.kotlin.annotations.collections
     AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 @MustBeDocumented
-@Retention(AnnotationRetention.BINARY) 
-public annotation class CollectionSize(val exactSize: Int)
-
+@Retention(AnnotationRetention.BINARY)
+public annotation class CollectionSizeAtMax(val maxNumberOfItems: Int)

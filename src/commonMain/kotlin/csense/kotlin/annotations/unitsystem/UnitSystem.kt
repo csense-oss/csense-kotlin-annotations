@@ -4,7 +4,7 @@ package csense.kotlin.annotations.unitsystem
 
 /**
  * idea:
- * user declares ValueTypes (as an object) with const val's which are strings (or it might be a enum or alike, or sealed class with string value)
+ * user declares ValueTypes (as an object) with const val's which are strings (or it might be an enum or alike, or sealed class with string value)
  * @ValueType(ValueTypes.PX)
  * or "UnitType"
  * or UnitSystem
