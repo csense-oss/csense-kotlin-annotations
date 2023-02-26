@@ -1,10 +1,8 @@
-@file:Suppress("unused")
-
-package csense.kotlin.annotations.threading
-
+package csense.kotlin.annotations.exceptions
 
 /**
- * Denotes that the given MUST be executed in the UI thread
+ * Tells that a given lambda argument will rethrow exceptions
+ * This goes in hand with the kotlin checked exception plugin.
  */
 @Target(
     AnnotationTarget.FUNCTION,
@@ -14,6 +12,6 @@ package csense.kotlin.annotations.threading
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.TYPE //for functional types
 )
-@Retention(AnnotationRetention.BINARY) 
+@Retention(AnnotationRetention.BINARY)
 @MustBeDocumented
-public annotation class InUi
+public annotation class RethrowsExceptions

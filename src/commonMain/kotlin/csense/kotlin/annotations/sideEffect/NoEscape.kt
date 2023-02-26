@@ -21,7 +21,8 @@ package csense.kotlin.annotations.sideEffect
     AnnotationTarget.TYPE,
     AnnotationTarget.FUNCTION,
     AnnotationTarget.FIELD,
-    AnnotationTarget.PROPERTY
+    AnnotationTarget.PROPERTY,
+    AnnotationTarget.LOCAL_VARIABLE
 )
 @Retention(AnnotationRetention.SOURCE)
 @MustBeDocumented

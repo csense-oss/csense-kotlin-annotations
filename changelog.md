@@ -1,3 +1,11 @@
+# 0.0.60
+- kotlin 1.8.10
+  - ios/macos targets added 
+- added
+- updated 
+  - InAny, InBackground, InUi to work on functional types
+  - NoEscape to work on local variable
+  
 # 0.0.50
 - kotlin 1.6.0
 - DiscardableResult added

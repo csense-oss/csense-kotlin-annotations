@@ -1,6 +1,6 @@
 buildscript {
     //versions & naming
-    ext.csenseVersionName = "0.0.50"
+    ext.csenseVersionName = "0.0.60"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -23,7 +23,7 @@ buildscript {
 }
 
 plugins {
-    id 'org.jetbrains.kotlin.multiplatform' version "1.6.0"
+    id 'org.jetbrains.kotlin.multiplatform' version "1.8.10"
     id "maven-publish"
 }
 
@@ -37,8 +37,14 @@ version project.csenseVersionName
 
 kotlin {
     explicitApi = 'strict'
+    iosX64 {
+
+    }
+    macosX64 {
+
+    }
     jvm()
-    js(BOTH) { //https://kotlinlang.org/docs/reference/whatsnew14.html#new-js-ir-backend
+    js(IR) {
         browser()
         nodejs()
     }
