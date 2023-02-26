@@ -1,6 +1,7 @@
-# 0.0.51
+# 0.0.60
+- kotlin 1.8.10
+  - ios/macos targets added 
 - added
-  - ShouldNotBeEmpty (to consideration)
 - updated 
   - InAny, InBackground, InUi to work on functional types
   - NoEscape to work on local variable

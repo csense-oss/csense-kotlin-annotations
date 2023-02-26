@@ -18,6 +18,8 @@ afterEvaluate {
             case 'jvm':
             case 'js':
             case 'native':
+            case 'iosX64':
+            case 'macosX64':
                 it.artifactId = "$project.name-$type"
                 break
         }
