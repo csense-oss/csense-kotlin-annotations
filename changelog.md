@@ -1,5 +1,5 @@
 # 0.0.61
-- ios&macOS targets for all archs.
+- now available on tier 1 & tier 2 targets + mingw
 
 # 0.0.60
 - kotlin 1.8.10
