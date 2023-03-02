@@ -1,3 +1,6 @@
+# 0.0.61
+- ios&macOS targets for all archs.
+
 # 0.0.60
 - kotlin 1.8.10
   - ios/macos targets added 

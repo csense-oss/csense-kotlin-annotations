@@ -1,6 +1,9 @@
+import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 buildscript {
     //versions & naming
-    ext.csenseVersionName = "0.0.60"
+    ext.csenseVersionName = "0.0.61"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -32,18 +35,22 @@ repositories {
     mavenCentral()
 }
 
+project.group = csenseGroupId
+project.version = csenseVersionName
+
 group project.csenseGroupId
 version project.csenseVersionName
 
 kotlin {
-    explicitApi = 'strict'
-    iosX64 {
+    explicitApi = ExplicitApiMode.Strict
 
-    }
-    macosX64 {
-
-    }
     jvm()
+
+    iosArm64()
+    iosX64()
+    macosArm64()
+    macosX64()
+
     js(IR) {
         browser()
         nodejs()
@@ -51,24 +58,27 @@ kotlin {
     sourceSets {
         commonMain {
         }
-        jvmMain {
-
-        }
-
-        jsMain {
-        }
-
     }
-}
 
-kotlin.sourceSets.all {
-    languageSettings.progressiveMode = true
 }
 
 
-project.group = csenseGroupId
-project.version = csenseVersionName
 
 apply from: "$rootDir/gradle/publish.gradle"
 
 task uploadProd(dependsOn: ["assemble", "allTests", "publish"])
+
+// warnings as errors
+tasks.withType(KotlinCompile).configureEach {
+    kotlinOptions.allWarningsAsErrors = true
+}
+
+//progressive mode & api version + optIns
+kotlin.sourceSets.configureEach {
+    languageSettings {
+        progressiveMode = true
+        languageVersion = "1.8"
+        optIn("kotlin.contracts.ExperimentalContracts")
+    }
+}
+
