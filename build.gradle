@@ -45,16 +45,34 @@ kotlin {
     explicitApi = ExplicitApiMode.Strict
 
     jvm()
-
-    iosArm64()
-    iosX64()
-    macosArm64()
-    macosX64()
-
     js(IR) {
         browser()
         nodejs()
     }
+
+    //Native targets, based on https://kotlinlang.org/docs/native-target-support.html
+    //- tier 1
+    linuxX64()
+    macosX64()
+    macosArm64()
+    iosSimulatorArm64()
+    iosX64()
+
+    //- tier 2
+    linuxArm64()
+    watchosSimulatorArm64()
+    watchosX64()
+    watchosArm32()
+    watchosArm64()
+    tvosSimulatorArm64()
+    tvosX64()
+    tvosArm64()
+    iosArm64()
+
+    //- tier 3 (some)
+    mingwX64()
+    //end native targets
+
     sourceSets {
         commonMain {
         }
