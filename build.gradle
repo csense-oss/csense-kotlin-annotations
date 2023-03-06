@@ -2,8 +2,11 @@ import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
+
+    ext.compileJavaVersion = "11"
+
     //versions & naming
-    ext.csenseVersionName = "0.0.61"
+    ext.csenseVersionName = "0.0.62"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -44,7 +47,11 @@ version project.csenseVersionName
 kotlin {
     explicitApi = ExplicitApiMode.Strict
 
-    jvm()
+    jvm {
+        compilations.configureEach {
+            kotlinOptions.jvmTarget = compileJavaVersion
+        }
+    }
     js(IR) {
         browser()
         nodejs()
@@ -81,7 +88,6 @@ kotlin {
 }
 
 
-
 apply from: "$rootDir/gradle/publish.gradle"
 
 task uploadProd(dependsOn: ["assemble", "allTests", "publish"])
@@ -90,6 +96,13 @@ task uploadProd(dependsOn: ["assemble", "allTests", "publish"])
 tasks.withType(KotlinCompile).configureEach {
     kotlinOptions.allWarningsAsErrors = true
 }
+
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(compileJavaVersion))
+    }
+}
+
 
 //progressive mode & api version + optIns
 kotlin.sourceSets.configureEach {

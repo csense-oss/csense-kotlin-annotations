@@ -1,3 +1,5 @@
+# 0.0.62
+- same as 0.0.61 targets instead java 11 (unfortunately 0.0.61 was without a target which caused it to use java 19 bytecode)
 # 0.0.61
 - now available on tier 1 & tier 2 targets + mingw
 
