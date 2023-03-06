@@ -1,6 +1,9 @@
+import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 buildscript {
     //versions & naming
-    ext.csenseVersionName = "0.0.60"
+    ext.csenseVersionName = "0.0.61"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -32,43 +35,68 @@ repositories {
     mavenCentral()
 }
 
+project.group = csenseGroupId
+project.version = csenseVersionName
+
 group project.csenseGroupId
 version project.csenseVersionName
 
 kotlin {
-    explicitApi = 'strict'
-    iosX64 {
+    explicitApi = ExplicitApiMode.Strict
 
-    }
-    macosX64 {
-
-    }
     jvm()
     js(IR) {
         browser()
         nodejs()
     }
+
+    //Native targets, based on https://kotlinlang.org/docs/native-target-support.html
+    //- tier 1
+    linuxX64()
+    macosX64()
+    macosArm64()
+    iosSimulatorArm64()
+    iosX64()
+
+    //- tier 2
+    linuxArm64()
+    watchosSimulatorArm64()
+    watchosX64()
+    watchosArm32()
+    watchosArm64()
+    tvosSimulatorArm64()
+    tvosX64()
+    tvosArm64()
+    iosArm64()
+
+    //- tier 3 (some)
+    mingwX64()
+    //end native targets
+
     sourceSets {
         commonMain {
         }
-        jvmMain {
-
-        }
-
-        jsMain {
-        }
-
     }
-}
 
-kotlin.sourceSets.all {
-    languageSettings.progressiveMode = true
 }
 
 
-project.group = csenseGroupId
-project.version = csenseVersionName
 
 apply from: "$rootDir/gradle/publish.gradle"
 
 task uploadProd(dependsOn: ["assemble", "allTests", "publish"])
+
+// warnings as errors
+tasks.withType(KotlinCompile).configureEach {
+    kotlinOptions.allWarningsAsErrors = true
+}
+
+//progressive mode & api version + optIns
+kotlin.sourceSets.configureEach {
+    languageSettings {
+        progressiveMode = true
+        languageVersion = "1.8"
+        optIn("kotlin.contracts.ExperimentalContracts")
+    }
+}
+
