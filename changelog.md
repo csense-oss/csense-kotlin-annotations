@@ -1,20 +1,32 @@
+# 0.0.63
+
+- fixed targets for CatchesException(s) & RethrowsExceptions
+- renamed CatchesException to CatchesExceptions and changed parameter to be a KClass<Throwable> (and removed Type
+  parameter)
+
 # 0.0.62
-- same as 0.0.61 targets instead java 11 (unfortunately 0.0.61 was without a target which caused it to use java 19 bytecode)
+
+- same as 0.0.61 targets instead java 11 (unfortunately 0.0.61 was without a target which caused it to use java 19
+  bytecode)
+
 # 0.0.61
+
 - now available on tier 1 & tier 2 targets + mingw
 
 # 0.0.60
+
 - kotlin 1.8.10
-  - ios/macos targets added 
+    - ios/macos targets added
 - added
-- updated 
-  - InAny, InBackground, InUi to work on functional types
-  - NoEscape to work on local variable
-  
+- updated
+    - InAny, InBackground, InUi to work on functional types
+    - NoEscape to work on local variable
+
 # 0.0.50
+
 - kotlin 1.6.0
 - DiscardableResult added
-- InSelector added 
+- InSelector added
 - InAnyContext added for consistency
 - improved doc
 
