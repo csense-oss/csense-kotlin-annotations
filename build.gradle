@@ -6,7 +6,7 @@ buildscript {
     ext.compileJavaVersion = "11"
 
     //versions & naming
-    ext.csenseVersionName = "0.0.62"
+    ext.csenseVersionName = "0.0.63"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
