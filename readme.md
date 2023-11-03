@@ -29,7 +29,7 @@ Then add the dependency
 
 ```groovy
 dependencies {
-    implementation 'csense.kotlin:csense-kotlin-annotations:0.0.50'
+    implementation 'csense.kotlin:csense-kotlin-annotations:0.0.70'
 }
 ```
 

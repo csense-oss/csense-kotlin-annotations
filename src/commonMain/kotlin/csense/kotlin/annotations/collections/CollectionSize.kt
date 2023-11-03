@@ -16,7 +16,7 @@ package csense.kotlin.annotations.collections
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
     AnnotationTarget.ANNOTATION_CLASS,
-    AnnotationTarget.TYPE//until you can annotate functional parameters
+    AnnotationTarget.TYPE
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY) 

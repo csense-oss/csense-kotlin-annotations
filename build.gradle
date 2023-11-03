@@ -6,7 +6,7 @@ buildscript {
     ext.compileJavaVersion = "11"
 
     //versions & naming
-    ext.csenseVersionName = "0.0.63"
+    ext.csenseVersionName = "0.0.70-Beta"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -29,7 +29,7 @@ buildscript {
 }
 
 plugins {
-    id 'org.jetbrains.kotlin.multiplatform' version "1.8.10"
+    id 'org.jetbrains.kotlin.multiplatform' version "1.9.20"
     id "maven-publish"
 }
 
@@ -108,7 +108,7 @@ kotlin {
 kotlin.sourceSets.configureEach {
     languageSettings {
         progressiveMode = true
-        languageVersion = "1.8"
+        languageVersion = "1.9"
         optIn("kotlin.contracts.ExperimentalContracts")
     }
 }
