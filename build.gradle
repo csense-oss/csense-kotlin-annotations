@@ -5,8 +5,9 @@ buildscript {
 
     ext.compileJavaVersion = "11"
 
+    ext.kotlin_version = "1.9.20"
     //versions & naming
-    ext.csenseVersionName = "0.0.70-Beta"
+    ext.csenseVersionName = "0.1.0-Beta"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -29,7 +30,7 @@ buildscript {
 }
 
 plugins {
-    id 'org.jetbrains.kotlin.multiplatform' version "1.9.20"
+    id 'org.jetbrains.kotlin.multiplatform' version "$kotlin_version"
     id "maven-publish"
 }
 
@@ -58,26 +59,34 @@ kotlin {
     }
 
     //Native targets, based on https://kotlinlang.org/docs/native-target-support.html
+
+    //Native targets, based on https://kotlinlang.org/docs/native-target-support.html
     //- tier 1
-    linuxX64()
-    macosX64()
-    macosArm64()
-    iosSimulatorArm64()
-    iosX64()
+//    macosX64()
+//    macosArm64()
+//    iosSimulatorArm64()
+//    iosX64()
 
     //- tier 2
+    linuxX64()
     linuxArm64()
-    watchosSimulatorArm64()
-    watchosX64()
-    watchosArm32()
-    watchosArm64()
-    tvosSimulatorArm64()
-    tvosX64()
-    tvosArm64()
-    iosArm64()
+//    watchosSimulatorArm64()
+//    watchosX64()
+//    watchosArm32()
+//    watchosArm64()
+//    tvosSimulatorArm64()
+//    tvosX64()
+//    tvosArm64()
+//    iosArm64()
 
-    //- tier 3 (some)
+    //- tier 3
+    androidNativeArm32()
+    androidNativeArm64()
+    androidNativeX86()
+    androidNativeX64()
     mingwX64()
+    androidNativeX64()
+//    watchosDeviceArm64()
     //end native targets
 
     sourceSets {
