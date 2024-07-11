@@ -1,3 +1,7 @@
+# 0.1.0
+- kotlin 2.0.0
+- rename package (for maven central)
+
 # 0.0.70
 
 - Kotlin 1.9.20
