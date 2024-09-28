@@ -5,9 +5,9 @@ buildscript {
 
     ext.compileJavaVersion = "11"
 
-    ext.kotlin_version = "2.0.0"
+    ext.kotlin_version = "2.0.20"
     //versions & naming
-    ext.csenseVersionName = "0.1.0-Beta"
+    ext.csenseVersionName = "0.1.0"
     ext.csenseGroupId = "csense.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -117,7 +117,7 @@ kotlin {
 kotlin.sourceSets.configureEach {
     languageSettings {
         progressiveMode = true
-        languageVersion = "2.0"
+        languageVersion = "2.1"
         optIn("kotlin.contracts.ExperimentalContracts")
     }
 }

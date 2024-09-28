@@ -1,7 +1,7 @@
 package org.csenseoss.kotlin.annotations.code
 
 /**
- * Instructions to tools (e.g. the csense kotlin Idea annotations plugin) whenever to color the given
+ * Instructions to tools (e.g. the csense kotlin IDEA annotations plugin) whenever to color the given
  * @property hexColor String eg "#03BAFC"
  */
 @Target(
