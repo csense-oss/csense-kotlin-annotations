@@ -1,6 +1,9 @@
 # 0.1.0
-- kotlin 2.0.0
+- kotlin 2.0.20
 - rename package (for maven central)
+- added
+  - inIOContext
+- first version of "UnitSystem"
 
 # 0.0.70
 

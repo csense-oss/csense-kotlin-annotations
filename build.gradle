@@ -5,10 +5,10 @@ buildscript {
 
     ext.compileJavaVersion = "11"
 
-    ext.kotlin_version = "2.0.20"
+    ext.kotlin_version = "2.0.21"
     //versions & naming
-    ext.csenseVersionName = "0.1.0"
-    ext.csenseGroupId = "csense.kotlin"
+    ext.csenseVersionName = "0.0.1"
+    ext.csenseGroupId = "org.csenseoss.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
     //repo settings
@@ -32,8 +32,9 @@ buildscript {
 plugins {
     id 'org.jetbrains.kotlin.multiplatform' version "$kotlin_version"
     id "maven-publish"
+    //https://github.com/vanniktech/gradle-maven-publish-plugin
+    id "com.vanniktech.maven.publish" version "0.30.0"
 }
-
 
 repositories {
     mavenCentral()
@@ -68,8 +69,8 @@ kotlin {
 //    iosX64()
 
     //- tier 2
-    linuxX64()
-    linuxArm64()
+//    linuxX64()
+//    linuxArm64()
 //    watchosSimulatorArm64()
 //    watchosX64()
 //    watchosArm32()
@@ -80,12 +81,12 @@ kotlin {
 //    iosArm64()
 
     //- tier 3
-    androidNativeArm32()
-    androidNativeArm64()
-    androidNativeX86()
-    androidNativeX64()
-    mingwX64()
-    androidNativeX64()
+//    androidNativeArm32()
+//    androidNativeArm64()
+//    androidNativeX86()
+//    androidNativeX64()
+//    mingwX64()
+//    androidNativeX64()
 //    watchosDeviceArm64()
     //end native targets
 
@@ -95,6 +96,9 @@ kotlin {
     }
 
 }
+
+
+
 
 
 apply from: "$rootDir/gradle/publish.gradle"
@@ -117,7 +121,46 @@ kotlin {
 kotlin.sourceSets.configureEach {
     languageSettings {
         progressiveMode = true
-        languageVersion = "2.1"
+        languageVersion = "2.0"
         optIn("kotlin.contracts.ExperimentalContracts")
     }
 }
+
+
+//
+mavenPublishing {
+
+    coordinates(csenseGroupId, csenseArtifactId, csenseVersionName)
+}
+//
+//    pom {
+//        name = csenseArtifactId
+//        description = csenseArtifactDescription
+//        url = csenseWebsite
+//        licenses {
+//            license {
+//                name = csenseLicense
+//                url = csenseLicenseUrl
+//            }
+//        }
+//        developers {
+//            developer {
+//                id = csenseDeveloperAlias
+//                name = csenseDeveloperName
+//                email = csenseDeveloperEmail
+//            }
+//        }
+//        organization {
+//            name = csenseUserOrg
+//        }
+//        issueManagement {
+//            system.set("Github")
+//            url.set("https://github.com/csense-oss/csense-kotlin-annotations/issues")
+//        }
+//        scm {
+//            connection.set("https://github.com/csense-oss/csense-kotlin-annotations.git")
+//            url.set("https://github.com/csense-oss/csense-kotlin-annotations")
+//        }
+//    }
+//}
+apply from: "$projectDir/gradle/publish.gradle"

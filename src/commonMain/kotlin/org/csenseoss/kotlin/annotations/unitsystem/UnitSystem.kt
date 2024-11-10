@@ -13,9 +13,14 @@ import kotlin.reflect.KClass
 @Retention(AnnotationRetention.BINARY)
 @MustBeDocumented
 public annotation class UnitSystemOf(
+    /**
+     * If the plugin should warn / highlight interactions between non annotated functions and variables, and those annotated with a unit system
+     */
     val shouldWarnOnMissingUnits: Boolean = false,
-    val shouldWarnOnMismatchingUnitsInGeneral: Boolean = true,
-    val shouldMarkOccurrencesWithUnits: Boolean = false //TODO?
+    /**
+     * Warn the user(via the plugin) when the units are not matching.
+     */
+    val shouldWarnOnMismatchingUnitsInGeneral: Boolean = true
 )
 
 /**
@@ -27,3 +32,38 @@ public annotation class UnitSystemOf(
 public annotation class UnitTypeOf(
     val kClass: KClass<out Any>
 )
+
+/**
+ * Allows the given method to convert unit system types, this means that unit system checking is off for this function.
+ */
+@Target(AnnotationTarget.FUNCTION)
+@Retention(AnnotationRetention.BINARY)
+@MustBeDocumented
+public annotation class UnitConversion
+
+
+
+// Examples:
+/**
+ * //Declaring unit system(s),simple:
+ *
+ * @UnitSystemOf
+ * public sealed interface AndroidDisplaySizes {
+ *     public annotation class PX
+ *     public annotation class DP
+ *     public annotation class SP
+ * }
+ *
+ * //declaring unit system(s), with easier to use annotations
+ *
+ * @UnitSystemOf
+ * public sealed interface Fruits
+ *
+ * @UnitTypeOf(Fruits::class)
+ * public annotation class Apple
+ *
+ * @UnitTypeOf(Fruits::class)
+ * public annotation class Banana
+ *
+ *
+ */
