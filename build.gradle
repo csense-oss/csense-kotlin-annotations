@@ -101,8 +101,6 @@ kotlin {
 
 
 
-apply from: "$rootDir/gradle/publish.gradle"
-
 task uploadProd(dependsOn: ["assemble", "allTests", "publish"])
 
 // warnings as errors
@@ -127,40 +125,8 @@ kotlin.sourceSets.configureEach {
 }
 
 
-//
 mavenPublishing {
-
     coordinates(csenseGroupId, csenseArtifactId, csenseVersionName)
 }
-//
-//    pom {
-//        name = csenseArtifactId
-//        description = csenseArtifactDescription
-//        url = csenseWebsite
-//        licenses {
-//            license {
-//                name = csenseLicense
-//                url = csenseLicenseUrl
-//            }
-//        }
-//        developers {
-//            developer {
-//                id = csenseDeveloperAlias
-//                name = csenseDeveloperName
-//                email = csenseDeveloperEmail
-//            }
-//        }
-//        organization {
-//            name = csenseUserOrg
-//        }
-//        issueManagement {
-//            system.set("Github")
-//            url.set("https://github.com/csense-oss/csense-kotlin-annotations/issues")
-//        }
-//        scm {
-//            connection.set("https://github.com/csense-oss/csense-kotlin-annotations.git")
-//            url.set("https://github.com/csense-oss/csense-kotlin-annotations")
-//        }
-//    }
-//}
+
 apply from: "$projectDir/gradle/publish.gradle"

@@ -1,32 +1,31 @@
-    mavenPublishing {
-//        coordinates(csenseGroupId, csenseArtifactId, csenseVersionName)
-        pom {
-            name = csenseArtifactId
-            description = csenseArtifactDescription
-            url = csenseWebsite
-            licenses {
-                license {
-                    name = csenseLicense
-                    url = csenseLicenseUrl
-                }
-            }
-            developers {
-                developer {
-                    id = csenseDeveloperAlias
-                    name = csenseDeveloperName
-                    email = csenseDeveloperEmail
-                }
-            }
-            organization {
-                name = csenseUserOrg
-            }
-            issueManagement {
-                system.set("Github")
-                url.set("https://github.com/csense-oss/csense-kotlin-annotations/issues")
-            }
-            scm {
-                connection.set("https://github.com/csense-oss/csense-kotlin-annotations.git")
-                url.set("https://github.com/csense-oss/csense-kotlin-annotations")
+mavenPublishing {
+    pom {
+        name = csenseArtifactId
+        description = csenseArtifactDescription
+        url = csenseWebsite
+        licenses {
+            license {
+                name = csenseLicense
+                url = csenseLicenseUrl
             }
         }
+        developers {
+            developer {
+                id = csenseDeveloperAlias
+                name = csenseDeveloperName
+                email = csenseDeveloperEmail
+            }
+        }
+        organization {
+            name = csenseUserOrg
+        }
+        issueManagement {
+            system.set("Github")
+            url.set("https://github.com/csense-oss/csense-kotlin-annotations/issues")
+        }
+        scm {
+            connection.set("https://github.com/csense-oss/csense-kotlin-annotations.git")
+            url.set("https://github.com/csense-oss/csense-kotlin-annotations")
+        }
     }
+}
