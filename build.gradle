@@ -60,25 +60,23 @@ kotlin {
     }
 
     //Native targets, based on https://kotlinlang.org/docs/native-target-support.html
-
-    //Native targets, based on https://kotlinlang.org/docs/native-target-support.html
     //- tier 1
-//    macosX64()
-//    macosArm64()
-//    iosSimulatorArm64()
-//    iosX64()
+    macosX64()
+    macosArm64()
+    iosSimulatorArm64()
+    iosX64()
 
     //- tier 2
     linuxX64()
     linuxArm64()
-//    watchosSimulatorArm64()
-//    watchosX64()
-//    watchosArm32()
-//    watchosArm64()
-//    tvosSimulatorArm64()
-//    tvosX64()
-//    tvosArm64()
-//    iosArm64()
+    watchosSimulatorArm64()
+    watchosX64()
+    watchosArm32()
+    watchosArm64()
+    tvosSimulatorArm64()
+    tvosX64()
+    tvosArm64()
+    iosArm64()
 
     //- tier 3
     androidNativeArm32()
@@ -87,7 +85,7 @@ kotlin {
     androidNativeX64()
     mingwX64()
     androidNativeX64()
-//    watchosDeviceArm64()
+    watchosDeviceArm64()
     //end native targets
 
     sourceSets {
