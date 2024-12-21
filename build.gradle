@@ -5,9 +5,9 @@ buildscript {
 
     ext.compileJavaVersion = "11"
 
-    ext.kotlin_version = "2.0.21"
+    ext.kotlin_version = "2.1.0"
     //versions & naming
-    ext.csenseVersionName = "0.0.1"
+    ext.csenseVersionName = "0.0.2"
     ext.csenseGroupId = "org.csenseoss.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -69,8 +69,8 @@ kotlin {
 //    iosX64()
 
     //- tier 2
-//    linuxX64()
-//    linuxArm64()
+    linuxX64()
+    linuxArm64()
 //    watchosSimulatorArm64()
 //    watchosX64()
 //    watchosArm32()
@@ -81,12 +81,12 @@ kotlin {
 //    iosArm64()
 
     //- tier 3
-//    androidNativeArm32()
-//    androidNativeArm64()
-//    androidNativeX86()
-//    androidNativeX64()
-//    mingwX64()
-//    androidNativeX64()
+    androidNativeArm32()
+    androidNativeArm64()
+    androidNativeX86()
+    androidNativeX64()
+    mingwX64()
+    androidNativeX64()
 //    watchosDeviceArm64()
     //end native targets
 
@@ -119,7 +119,7 @@ kotlin {
 kotlin.sourceSets.configureEach {
     languageSettings {
         progressiveMode = true
-        languageVersion = "2.0"
+        languageVersion = "2.1"
         optIn("kotlin.contracts.ExperimentalContracts")
     }
 }
