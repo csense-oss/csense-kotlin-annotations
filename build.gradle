@@ -7,7 +7,7 @@ buildscript {
 
     ext.kotlin_version = "2.1.0"
     //versions & naming
-    ext.csenseVersionName = "0.0.2"
+    ext.csenseVersionName = "0.0.3"
     ext.csenseGroupId = "org.csenseoss.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
