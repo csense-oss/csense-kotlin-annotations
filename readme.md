@@ -14,23 +14,12 @@ gives IDE warnings, errors and uses the annotations to provide a RICH and helpfu
 
 ## Installation
 
-add this maven repo (into your repositories, either in the root build.gradle og the application's build.gradle)
-
-```groovy
-repositories {
-    maven {
-        url 'https://pkgs.dev.azure.com/csense-oss/csense-oss/_packaging/csense-oss/maven/v1'
-        name 'csense-oss'
-    }
-}
-```
-
-Then add the dependency
+It is published to maven central, thus if added as a repository you can simply add the dependency
 
 ```groovy
 dependencies {
-    implementation 'csense.kotlin:csense-kotlin-annotations:0.0.50'
-}
+    implementation 'org.csenseoss.kotlin:csense-kotlin-annotations:0.1.0'
+}   
 ```
 
 ## Simple examples
@@ -159,4 +148,5 @@ that are not intended for so).
 ```kotlin
 @DiscardableResult
 ```
+
 Denotes a function return value is not "important" thus not using / storing it is "okay"
