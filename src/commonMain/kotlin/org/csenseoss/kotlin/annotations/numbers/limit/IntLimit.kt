@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package org.csenseoss.kotlin.annotations.numbers
+package org.csenseoss.kotlin.annotations.numbers.limit
 
 @Target(
     AnnotationTarget.FUNCTION,
@@ -10,12 +10,13 @@ package org.csenseoss.kotlin.annotations.numbers
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
     AnnotationTarget.LOCAL_VARIABLE,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.TYPE//until you can annotate functional parameters
 )
 
 @Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
-public annotation class FloatLimit(
-    val from: Float = Float.MIN_VALUE,
-    val to: Float = Float.MAX_VALUE
+public annotation class IntLimit(
+    val from: Int = Int.MIN_VALUE,
+    val to: Int = Int.MAX_VALUE
 )

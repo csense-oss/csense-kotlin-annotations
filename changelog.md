@@ -1,10 +1,13 @@
-# 0.1.0
-- kotlin 2.1.0
+# 1.0.0
+- kotlin 2.1.21
 - rename package (for maven central)
 - added
   - InIOContext
   - MustImplementEquals
+  - UseSingletonInstance
+
 - first version of "UnitSystem"
+- updated namespaces for "in" (threading), "size" (collection) limit (numbers)
 
 # 0.0.70
 

@@ -1,7 +1,9 @@
-package org.csenseoss.kotlin.annotations.threading
+@file:Suppress("unused")
+
+package org.csenseoss.kotlin.annotations.threading.`in`
 
 /**
- * Denotes that the given MUST be executed in the IO thread
+ * Denotes that the given can execute in whatever threading state (say UI, background, IO etc.)
  */
 @Target(
     AnnotationTarget.FUNCTION,
@@ -11,6 +13,6 @@ package org.csenseoss.kotlin.annotations.threading
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.TYPE //for functional types
 )
-@Retention(AnnotationRetention.BINARY)
+@Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
-public annotation class InIO
+public annotation class InAny

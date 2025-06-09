@@ -1,11 +1,10 @@
 @file:Suppress("unused")
 
-package org.csenseoss.kotlin.annotations.threading
+package org.csenseoss.kotlin.annotations.threading.`in`
+
 
 /**
- * Denotes that something MUST happen in the background(threading)
- * so eg IO (should not be done in the UI)
- * or long computing tasks / slow computations.
+ * Denotes that the given MUST be executed in the UI thread
  */
 @Target(
     AnnotationTarget.FUNCTION,
@@ -17,4 +16,4 @@ package org.csenseoss.kotlin.annotations.threading
 )
 @Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
-public annotation class InBackground
+public annotation class InUi

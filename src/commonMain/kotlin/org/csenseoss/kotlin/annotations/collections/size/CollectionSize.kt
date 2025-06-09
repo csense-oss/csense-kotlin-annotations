@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package org.csenseoss.kotlin.annotations.collections
+package org.csenseoss.kotlin.annotations.collections.size
 
 /**
  * Denotes that the given collection (say, list , array or alike) have the exact size specified.

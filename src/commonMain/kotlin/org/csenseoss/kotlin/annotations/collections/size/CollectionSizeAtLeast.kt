@@ -1,8 +1,8 @@
-package org.csenseoss.kotlin.annotations.collections
+package org.csenseoss.kotlin.annotations.collections.size
 
 /**
- * Denotes that the given collection (say, list , array or alike) have at max the specified number of elements
- * @property maxNumberOfItems Int the size this collection will at max "contain" / return
+ * Denotes that the given collection (say, list , array or alike) have at least the specified number of elements
+ * @property minNumberOfItems Int the size this collection will at least "contain" / return
  */
 @Target(
     AnnotationTarget.FUNCTION,
@@ -17,4 +17,4 @@ package org.csenseoss.kotlin.annotations.collections
 )
 @MustBeDocumented
 @Retention(AnnotationRetention.BINARY)
-public annotation class CollectionSizeAtMax(val maxNumberOfItems: Int)
+public annotation class CollectionSizeAtLeast(val minNumberOfItems: Int)

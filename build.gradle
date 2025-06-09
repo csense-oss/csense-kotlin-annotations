@@ -5,9 +5,9 @@ buildscript {
 
     ext.compileJavaVersion = "11"
 
-    ext.kotlin_version = "2.1.0"
+    ext.kotlin_version = "2.1.21"
     //versions & naming
-    ext.csenseVersionName = "0.0.3"
+    ext.csenseVersionName = "0.1.0"
     ext.csenseGroupId = "org.csenseoss.kotlin"
     ext.csenseArtifactId = "csense-kotlin-annotations"
 
@@ -33,7 +33,7 @@ plugins {
     id 'org.jetbrains.kotlin.multiplatform' version "$kotlin_version"
     id "maven-publish"
     //https://github.com/vanniktech/gradle-maven-publish-plugin
-    id "com.vanniktech.maven.publish" version "0.30.0"
+    id "com.vanniktech.maven.publish" version "0.32.0"
 }
 
 repositories {
@@ -117,7 +117,6 @@ kotlin {
 kotlin.sourceSets.configureEach {
     languageSettings {
         progressiveMode = true
-        languageVersion = "2.1"
         optIn("kotlin.contracts.ExperimentalContracts")
     }
 }

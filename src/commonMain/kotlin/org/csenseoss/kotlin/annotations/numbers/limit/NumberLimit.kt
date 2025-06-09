@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package org.csenseoss.kotlin.annotations.numbers
+package org.csenseoss.kotlin.annotations.numbers.limit
 
 
 @Target(

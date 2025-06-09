@@ -1,4 +1,4 @@
-package org.csenseoss.kotlin.annotations.threading
+package org.csenseoss.kotlin.annotations.threading.`in`
 
 /**
  * Denotes that a given functional type is run according to the threading/scope of the given (name of) dispatcher

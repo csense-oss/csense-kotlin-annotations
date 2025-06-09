@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package org.csenseoss.kotlin.annotations.numbers
+package org.csenseoss.kotlin.annotations.numbers.limit
 
 @Target(
     AnnotationTarget.FUNCTION,
@@ -16,7 +16,7 @@ package org.csenseoss.kotlin.annotations.numbers
 
 @Retention(AnnotationRetention.BINARY) 
 @MustBeDocumented
-public annotation class IntLimit(
-    val from: Int = Int.MIN_VALUE,
-    val to: Int = Int.MAX_VALUE
+public annotation class LongLimit(
+    val from: Long = Long.MIN_VALUE,
+    val to: Long = Long.MAX_VALUE
 )

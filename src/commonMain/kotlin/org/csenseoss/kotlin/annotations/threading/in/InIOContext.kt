@@ -1,4 +1,4 @@
-package org.csenseoss.kotlin.annotations.threading
+package org.csenseoss.kotlin.annotations.threading.`in`
 
 /**
  * Denotes that the given MUST be executed in the IO thread

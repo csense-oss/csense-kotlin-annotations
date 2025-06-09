@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package org.csenseoss.kotlin.annotations.threading
+package org.csenseoss.kotlin.annotations.threading.`in`
 /**
  * Denotes that the given context (whole class, file etc.) MUST be executed in the UI thread
  */

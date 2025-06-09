@@ -1,4 +1,4 @@
-package org.csenseoss.kotlin.annotations.collections
+package org.csenseoss.kotlin.annotations.collections.size
 
 /**
  * Denotes that the given collection (say, list , array or alike) have at the given range of elements

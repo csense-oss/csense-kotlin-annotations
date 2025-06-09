@@ -1,11 +1,11 @@
 @file:Suppress("unused")
 
-package org.csenseoss.kotlin.annotations.numbers
+package org.csenseoss.kotlin.annotations.numbers.limit
 
 @Target(
     AnnotationTarget.FUNCTION,
-    AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_GETTER,
+    AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_SETTER,
     AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.FIELD,
@@ -15,7 +15,7 @@ package org.csenseoss.kotlin.annotations.numbers
 )
 @Retention(AnnotationRetention.BINARY)
 @MustBeDocumented
-public annotation class DoubleLimit(
-    val from: Double = Double.MIN_VALUE,
-    val to: Double = Double.MAX_VALUE
+public annotation class ByteLimit(
+    val from: Byte = Byte.MIN_VALUE,
+    val to: Byte = Byte.MAX_VALUE
 )
