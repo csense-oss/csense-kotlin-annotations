@@ -8,10 +8,6 @@
 
 - first version of "UnitSystem"
 - updated namespaces for "in" (threading), "size" (collection) limit (numbers)
-
-# 0.0.70
-
-- Kotlin 1.9.20
 - added "ColoredCode"
 - added InIO (akin to inBackground / inUI)
 
